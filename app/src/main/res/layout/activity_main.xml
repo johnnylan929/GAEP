@@ -11,7 +11,17 @@
     tools:context="tw.lan.myfireauthemailpass.MainActivity">
 
     <TextView
+        android:layout_width="250sp"
+        android:layout_height="wrap_content"
+        android:text="Hello World!"
+        android:id="@+id/main_textview"/>
+
+    <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!" />
+        android:text="LOGOUT"
+        android:onClick="logout"
+        android:layout_toRightOf="@id/main_textview"
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@id/main_textview"/>
 </RelativeLayout>
