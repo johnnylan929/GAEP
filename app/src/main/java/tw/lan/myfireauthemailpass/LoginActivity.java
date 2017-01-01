@@ -35,7 +35,8 @@ public class LoginActivity extends AppCompatActivity {
                 .addOnSuccessListener(new OnSuccessListener<AuthResult>() {
                     @Override
                     public void onSuccess(AuthResult authResult) {
-                        FirebaseUser user = mAuth.getCurrentUser();
+//                        FirebaseUser user = mAuth.getCurrentUser();
+                        FirebaseUser user = authResult.getUser();
                         if (user != null) {
                             Log.d("lan", user.getEmail());
                             Log.d("lan", user.getUid());
