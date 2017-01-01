@@ -1,5 +1,7 @@
 package tw.lan.myfireauthemailpass;
 
+import android.content.Intent;
+import android.graphics.LinearGradient;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -27,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
                     Log.d("lan", "onAuthStateChanged:signed_in:" + user.getUid());
                 }else {
                     // User is signed out
+                    startActivityForResult(new Intent(MainActivity.this, LoginActivity.class), 1);
                     Log.d("lan", "onAuthStateChanged:signed_out");
                 }
             }
