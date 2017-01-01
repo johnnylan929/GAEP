@@ -1,0 +1,38 @@
+{
+  "project_info": {
+    "project_number": "1038067269278",
+    "firebase_url": "https://project-2798137008814916392.firebaseio.com",
+    "project_id": "project-2798137008814916392",
+    "storage_bucket": "project-2798137008814916392.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1038067269278:android:57eaa0c5c2eb9427",
+        "android_client_info": {
+          "package_name": "tw.lan.myfireauthemailpass"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1038067269278-03jfeqnqr17imotck2g4ncklq4gek06i.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
