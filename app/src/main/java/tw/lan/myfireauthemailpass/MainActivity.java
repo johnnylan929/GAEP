@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -28,6 +29,8 @@ public class MainActivity extends AppCompatActivity {
                 if (user != null) {
                     // User is signed in
                     Log.d("lan", "onAuthStateChanged:signed_in:" + user.getUid());
+                    Toast.makeText(MainActivity.this, "自動登入",
+                            Toast.LENGTH_SHORT).show();
                 }else {
                     // User is signed out
                     startActivityForResult(new Intent(MainActivity.this, LoginActivity.class), 1);
@@ -39,6 +42,7 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onStart() {
+        Log.d("lan", "onStart");
         super.onStart();
         mAuth.addAuthStateListener(mAuthListener);
     }
@@ -46,6 +50,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onStop() {
         super.onStop();
+        Log.d("lan", "onStop");
         if (mAuthListener != null) {
             mAuth.removeAuthStateListener(mAuthListener);
         }
@@ -61,7 +66,22 @@ public class MainActivity extends AppCompatActivity {
         if (mAuth != null) {
             mAuth.signOut();
             startActivity(new Intent(MainActivity.this, LoginActivity.class));
-            finish();
+        }
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == 1) {
+            Log.d("lan", String.valueOf(RESULT_OK));
+            if (requestCode == RESULT_OK) {
+                Toast.makeText(MainActivity.this, "登入成功",
+                        Toast.LENGTH_SHORT).show();
+            }else {
+                Toast.makeText(MainActivity.this, "登入失敗",
+                        Toast.LENGTH_SHORT).show();
+//                finish();
+            }
         }
     }
 }

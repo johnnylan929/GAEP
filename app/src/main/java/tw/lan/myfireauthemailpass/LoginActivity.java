@@ -35,16 +35,8 @@ public class LoginActivity extends AppCompatActivity {
                 .addOnSuccessListener(new OnSuccessListener<AuthResult>() {
                     @Override
                     public void onSuccess(AuthResult authResult) {
-//                        FirebaseUser user = mAuth.getCurrentUser();
-                        FirebaseUser user = authResult.getUser();
-                        if (user != null) {
-                            Log.d("lan", user.getEmail());
-                            Log.d("lan", user.getUid());
-//                            Log.d("lan", user.getDisplayName());
-//                            Log.d("lan", user.getPhotoUrl().toString());
-                        }
-//                        Toast.makeText(LoginActivity.this, "OKOKOKOKOK",
-//                                Toast.LENGTH_SHORT).show();
+                        setResult(RESULT_OK);
+                        finish();
                     }
                 }).addOnFailureListener(new OnFailureListener() {
             @Override
